@@ -44,26 +44,19 @@ dropdownUl.onclick = function(event) {
         // alert(target.innerHTML);
         function changeSelectOption() {
 			selectOption.onchange = GetSelectedTextValue();
-
+			var buttonNode1 = document.getElementById("dropdown-button");
 			function GetSelectedTextValue() {
-				// var buttonNode1;
 				if (target.innerHTML === "Volvo") {
 					selectOption.options[0].selected = "true";
-					buttonNode = document.createTextNode(selectOption.options[0].innerHTML);
-
 				} else if (target.innerHTML === "Saab") {
 					selectOption.options[1].selected = "true";
-					buttonNode = document.createTextNode(selectOption.options[1].innerHTML);
 				} if (target.innerHTML === "Opel") {
 					selectOption.options[2].selected = "true";
-					buttonNode = document.createTextNode(selectOption.options[2].innerHTML);
 				} else if (target.innerHTML === "Audi") {
 					selectOption.options[3].selected = "true";
-					buttonNode = document.createTextNode(selectOption.options[3].innerHTML);
 				}
-		        
-		        button.appendChild(buttonNode);
 		    }
+		    buttonNode1.innerHTML = target.innerHTML;
 		}
 		changeSelectOption();
 
