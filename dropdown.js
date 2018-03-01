@@ -11,13 +11,15 @@ dropDownList.style.display = "none";
 // CREATE ITEMS UNDER THE DROPDOWNLIST
 const dropdownUl = document.createElement("ul");
 dropdownUl.setAttribute("id", "dropdownUl");
-var menuText = ['Nav Point', 'Loiter Time', 'Loiter Turns', 'Loiter Infinite'];
+var menuText = [['Nav Point', 17], ['Loiter Time', 18], ['Loiter Turns', 19], ['Loiter Infinite', 16]];
 
 for (var i = 0; i < menuText.length; i++) {
 	var dropdownLi = document.createElement("li");
-    var dropdownLiNode = document.createTextNode(menuText[i]);
-    dropdownLi.appendChild(dropdownLiNode);
-    dropdownLi.setAttribute("id", "dropdownLi-" + (i+1));
+	var dropdownLiNode = document.createTextNode(menuText[i][0]);
+    for (var j = 0; j < menuText.length; j++) {
+	    dropdownLi.appendChild(dropdownLiNode);
+	    dropdownLi.setAttribute("id", menuText[i][1]);
+    }
     dropdownUl.appendChild(dropdownLi);
 
     dropdownLi.onclick = menuClick;
@@ -79,9 +81,9 @@ function buttonClick() {
 area.appendChild(button);
 area.appendChild(dropDownList);
 
-var activeClass = document.getElementById('dropdownLi-1');
-console.log(activeClass);
-activeClass.classList.add('active');
+// var activeClass = document.getElementById('dropdownLi-1');
+// console.log(activeClass);
+// activeClass.classList.add('active');
 
 var dropdownAr = document.getElementById('dropdownDiv');
 
